@@ -11,7 +11,7 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div>
-          <label htmlFor="organize">Sort your Tuck</label>
+          <label htmlFor="organize">Sort </label>
           <select
             name="organize"
             id="organize"

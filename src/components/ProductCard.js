@@ -6,6 +6,7 @@ import {
   faTrashAlt,
   faEdit,
   faExpandArrowsAlt,
+  faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
 
 class ProductCard extends Component {
@@ -19,22 +20,56 @@ class ProductCard extends Component {
     })
       .then((res) => {
         this.context.updateStore();
-        //this.props.history.push("/");
       })
       .catch((e) => {
         throw new Error(`Error deleting: ${e.message}`);
       });
   };
 
+  generateRating = (num) => {
+    if (num === 1) {
+      return (
+        <p>
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+        </p>
+      );
+    }
+    if (num === 2) {
+      return (
+        <p>
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+        </p>
+      );
+    }
+    if (num === 3) {
+      return (
+        <p>
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+        </p>
+      );
+    }
+  };
+
   render() {
-    const { date, id, name, severity, description } = this.props;
+    const { date, id, name, rating, synopsis, image } = this.props;
+    console.log(rating);
     const dateString = new Date(date).toLocaleDateString();
     return (
-      <li className="grid-item">
-        <h4>{dateString}</h4>
-        <p className="textOver">{name}</p>
-        <p>Severity: {severity}</p>
-        <p>{description}</p>
+      <li className="product">
+        <img className="landingimg" src={image} alt="logo" />
+        <Link
+          to={{
+            pathname: `/home/details/${id}`,
+          }}
+        >
+          <h4>{name}</h4>
+        </Link>
+
+        {this.generateRating(rating)}
+        <p>{synopsis}</p>
 
         <Link
           to={{
@@ -54,30 +89,6 @@ class ProductCard extends Component {
             />
           </button>
         </Link>
-
-        <Link
-          to={{
-            pathname: `/home/edit/${id}`,
-          }}
-        >
-          <button
-            name="edit"
-            aria-label="edit"
-            aria-pressed="false"
-            className="symptom-button"
-          >
-            <FontAwesomeIcon icon={faEdit} size="1x" alt="edit icon" />
-          </button>
-        </Link>
-        <button
-          id="delete"
-          name="delete"
-          aria-label="delete"
-          className="symptom-button"
-          onClick={this.deleteProduct}
-        >
-          <FontAwesomeIcon icon={faTrashAlt} size="1x" />
-        </button>
       </li>
     );
   }

@@ -15,7 +15,13 @@ class ProductList extends Component {
           id={product.id}
           date={product.date}
           name={product.name}
-          severity={product.rating}
+          rating={product.rating}
+          synopsis={product.synopsis}
+          description={product.description}
+          disposal={product.disposal}
+          link={product.link}
+          image={product.image}
+          category={product.category}
           store={this.props.store}
         />
       );
@@ -25,7 +31,7 @@ class ProductList extends Component {
   render() {
     return (
       <section className="log main">
-        <ul className="flex-grid">{this.generateProductList()}</ul>
+        <ul className="list">{this.generateProductList()}</ul>
       </section>
     );
   }

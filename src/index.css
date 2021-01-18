@@ -9,10 +9,10 @@
   flex-direction: column;
   height: 100%;
 }
-html {
+/* html {
   background: linear-gradient(to top right, white, #bad0e9);
   background-size: 400% 400%;
-}
+} */
 .App {
   position: relative;
   animation: change 5s ease-in-out infinite;

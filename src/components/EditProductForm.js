@@ -95,7 +95,7 @@ class EditProductForm extends Component {
             required
           ></textarea>
           <button className="form-button" type="submit">
-            Tuck it
+            Submit
           </button>
           <button
             className="form-button"

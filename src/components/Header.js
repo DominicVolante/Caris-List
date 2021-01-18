@@ -1,22 +1,21 @@
 import React from "react";
-import tuckLogo from "../images/tuckLogo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
-  console.log(tuckLogo);
   return (
     <header className="header">
-        <div className="header_flex ">
+      <div className="header_flex ">
+        <h1>
           <Link
             to={{
               pathname: `/home`,
             }}
           >
-            <img className="headerimg" src={tuckLogo} alt="logo" />
+            Cari's List
           </Link>
-        </div>
-        <div className="headerBar"></div>
-      
+        </h1>
+      </div>
+      <div className="headerBar"></div>
     </header>
   );
 };

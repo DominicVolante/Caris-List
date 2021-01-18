@@ -66,7 +66,7 @@ class AddProductForm extends Component {
           <label htmlFor="description">Description</label>
           <textarea name="description" id="description" required></textarea>
           <button className="start-button" type="submit">
-            Tuck it
+            Submit
           </button>
           <button
             className="start-button"
