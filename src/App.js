@@ -21,10 +21,10 @@ class App extends Component {
     if (!sort) {
       return;
     }
-    if (sort === "date") {
+    if (sort === "up") {
       let sorted = [...this.state.store.products];
       sorted.sort((a, b) => {
-        return new Date(b.date) - new Date(a.date);
+        return a.rating - b.rating;
       });
       this.setState({
         store: {
@@ -32,10 +32,10 @@ class App extends Component {
         },
       });
     }
-    if (sort === "severity") {
+    if (sort === "down") {
       let sorted = [...this.state.store.products];
       sorted.sort((a, b) => {
-        return b.severity - a.severity;
+        return b.rating - a.rating;
       });
       this.setState({
         store: {

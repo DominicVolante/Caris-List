@@ -20,11 +20,10 @@ class Sidebar extends Component {
             }}
           >
             <option className="hidden">Sort</option>
-            <option value="date">Date</option>
-            <option value="severity">Severity</option>
+            <option value="up">Leaves +</option>
+            <option value="down">Leaves -</option>
           </select>
         </div>
-        <AddProductForm />
       </div>
     );
   }
