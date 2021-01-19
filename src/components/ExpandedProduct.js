@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import DefaultContext from "./context/DefaultContext";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowAltCircleLeft,
@@ -59,6 +60,8 @@ class ExpandedProduct extends Component {
       synopsis,
       description,
       image,
+      link,
+      disposal,
     } = this.state.product;
     const dateString = new Date(date).toLocaleDateString();
     return (
@@ -76,11 +79,17 @@ class ExpandedProduct extends Component {
         </button>
         <div>
           <img className="landingimg" src={image} alt="logo" />
-          <h5>{name}</h5>
+          <h4>{name}</h4>
 
           {this.generateRating(rating)}
+          <a target="_blank" href={link}>
+            Visit!
+          </a>
           <p>{synopsis}</p>
+          <h5>Description</h5>
           <p>{description}</p>
+          <h5>Disposal</h5>
+          <p>{disposal}</p>
         </div>
       </div>
     );

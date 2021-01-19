@@ -70,25 +70,6 @@ class ProductCard extends Component {
 
         {this.generateRating(rating)}
         <p>{synopsis}</p>
-
-        <Link
-          to={{
-            pathname: `/home/details/${id}`,
-          }}
-        >
-          <button
-            name="expand"
-            aria-label="expand"
-            aria-pressed="false"
-            className="symptom-button"
-          >
-            <FontAwesomeIcon
-              icon={faExpandArrowsAlt}
-              size="1x"
-              alt="expand icon"
-            />
-          </button>
-        </Link>
       </li>
     );
   }
