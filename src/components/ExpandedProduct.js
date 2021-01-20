@@ -17,14 +17,14 @@ class ExpandedProduct extends Component {
   generateRating = (num) => {
     if (num === 1) {
       return (
-        <p>
+        <p className="rating">
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
         </p>
       );
     }
     if (num === 2) {
       return (
-        <p>
+        <p className="rating">
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
         </p>
@@ -32,7 +32,7 @@ class ExpandedProduct extends Component {
     }
     if (num === 3) {
       return (
-        <p>
+        <p className="rating">
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
           <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
@@ -78,14 +78,20 @@ class ExpandedProduct extends Component {
           />
         </button>
         <div>
-          <img className="landingimg" src={image} alt="logo" />
-          <h4>{name}</h4>
+          <div className="sectionrow">
+            <img className="expandedImg main" src={image} alt="logo" />
+            <div className="sidebar">
+              <h2>{name}</h2>
 
-          {this.generateRating(rating)}
-          <a target="_blank" href={link}>
-            Visit!
-          </a>
-          <p>{synopsis}</p>
+              {this.generateRating(rating)}
+              <button className="form-button">
+                <a target="_blank" href={link}>
+                  Visit Their Store
+                </a>
+              </button>
+              <p>{synopsis}</p>
+            </div>
+          </div>
           <h5>Description</h5>
           <p>{description}</p>
           <h5>Disposal</h5>

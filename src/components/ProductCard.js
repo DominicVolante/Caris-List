@@ -29,25 +29,55 @@ class ProductCard extends Component {
   generateRating = (num) => {
     if (num === 1) {
       return (
-        <p>
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
+        <p className="rating">
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />
         </p>
       );
     }
     if (num === 2) {
       return (
-        <p>
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
+        <p className="rating">
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />{" "}
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />
         </p>
       );
     }
     if (num === 3) {
       return (
-        <p>
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
+        <p className="rating">
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />{" "}
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />{" "}
+          <FontAwesomeIcon
+            className="icon"
+            icon={faSeedling}
+            size="lg"
+            alt="1"
+          />
         </p>
       );
     }

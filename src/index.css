@@ -1,8 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 /* APP CLASSES */
 * {
   box-sizing: border-box;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Lato", sans-serif;
   color: #4e5052;
+}
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }
 #root {
   display: flex;
@@ -56,6 +64,9 @@ body {
   padding: 5px;
   width: 150px;
   margin-top: 25px;
+}
+.landingimg:hover {
+  box-shadow: 0 0 2px 1px rgba(112, 182, 80, 0.5);
 }
 .wrapper {
   margin: 50px 25px;
@@ -176,8 +187,13 @@ textarea {
 
 .product {
   display: flex;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #595f62;
   padding-bottom: 5px;
+}
+
+.rating {
+  margin-top: 0;
+  margin-left: 20px;
 }
 
 .productTitle {
@@ -202,7 +218,7 @@ textarea {
     position: sticky;
   }
   .main {
-    flex: 3;
+    flex: 2;
     position: static;
   }
 }
@@ -276,4 +292,10 @@ ul {
   border: 1px;
   background-color: #f8f9fa;
   border: 1px solid #e6e8eb;
+}
+.expandedImg {
+  border: 1px solid #ddd; /* thickness and color of border */
+  border-radius: 4px; /* edge rounding of border */
+  width: 100px; /* width of image (px or % or auto) */
+  height: auto;
 }
