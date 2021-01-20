@@ -14,6 +14,7 @@ class App extends Component {
     store: {
       products: [],
     },
+    filteredProducts: [],
     url: this.context.url,
   };
 
@@ -45,6 +46,25 @@ class App extends Component {
     }
   };
 
+  filterList = (filter) => {
+    let unFiltered = [...this.state.store.products];
+    let filtered = [];
+
+    if (!filter) {
+      this.updateStore();
+    }
+    for (let i = 0; i < unFiltered.length; i++) {
+      if (unFiltered[i].category.includes(filter)) {
+        filtered.push(unFiltered[i]);
+      }
+      this.setState({
+        store: {
+          products: filtered,
+        },
+      });
+    }
+  };
+
   updateStore = () => {
     this.getProducts();
   };
@@ -70,6 +90,7 @@ class App extends Component {
       ...this.state,
       updateStore: this.updateStore,
     };
+
     return (
       <DefaultContext.Provider value={contextVal}>
         <div className="App">
@@ -79,7 +100,11 @@ class App extends Component {
             exact
             path="/home"
             render={() => (
-              <HomeRoute store={this.state.store} sortList={this.sortList} />
+              <HomeRoute
+                store={this.state.store}
+                sortList={this.sortList}
+                filterList={this.filterList}
+              />
             )}
           />
           <Route path="/home/edit/:id" component={EditProductForm} />

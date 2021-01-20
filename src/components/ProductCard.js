@@ -30,24 +30,24 @@ class ProductCard extends Component {
     if (num === 1) {
       return (
         <p>
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
         </p>
       );
     }
     if (num === 2) {
       return (
         <p>
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
         </p>
       );
     }
     if (num === 3) {
       return (
         <p>
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />{" "}
-          <FontAwesomeIcon icon={faSeedling} size="1x" alt="1" />
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />{" "}
+          <FontAwesomeIcon icon={faSeedling} size="2x" alt="1" />
         </p>
       );
     }
@@ -55,21 +55,27 @@ class ProductCard extends Component {
 
   render() {
     const { date, id, name, rating, synopsis, image } = this.props;
-    console.log(rating);
     const dateString = new Date(date).toLocaleDateString();
     return (
       <li className="product">
-        <img className="landingimg" src={image} alt="logo" />
         <Link
           to={{
             pathname: `/home/details/${id}`,
           }}
         >
-          <h4>{name}</h4>
+          <img className="landingimg" src={image} alt="logo" />
         </Link>
+        <div className="productTitle">
+          <Link
+            to={{
+              pathname: `/home/details/${id}`,
+            }}
+          >
+            <h3>{name}</h3>
+          </Link>
 
-        {this.generateRating(rating)}
-        <p>{synopsis}</p>
+          {this.generateRating(rating)}
+        </div>
       </li>
     );
   }

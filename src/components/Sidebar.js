@@ -24,6 +24,22 @@ class Sidebar extends Component {
             <option value="down">Leaves -</option>
           </select>
         </div>
+        <div>
+          <label htmlFor="organize">Filter </label>
+          <select
+            name="organize"
+            id="organize"
+            onChange={(e) => {
+              this.props.filterList(e.target.value);
+            }}
+          >
+            <option className="hidden">Filter</option>
+            <option value="">All</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="bath">Bath</option>
+            <option value="services">Services</option>
+          </select>
+        </div>
       </div>
     );
   }
