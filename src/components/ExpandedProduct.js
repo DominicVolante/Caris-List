@@ -6,6 +6,7 @@ import {
   faArrowAltCircleLeft,
   faSeedling,
 } from "@fortawesome/free-solid-svg-icons";
+import { Tabs } from "./Tabs";
 
 class ExpandedProduct extends Component {
   static contextType = DefaultContext;
@@ -92,10 +93,16 @@ class ExpandedProduct extends Component {
               <p>{synopsis}</p>
             </div>
           </div>
-          <h5>Description</h5>
-          <p>{description}</p>
-          <h5>Disposal</h5>
-          <p>{disposal}</p>
+          <Tabs initialTab="Description">
+            <div label="Description">
+              <h2>Description</h2>
+              <p>{description}</p>
+            </div>
+            <div label="Disposal">
+              <h2>Disposal</h2>
+              <p>{disposal}</p>
+            </div>
+          </Tabs>
         </div>
       </div>
     );
