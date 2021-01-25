@@ -1,9 +1,9 @@
 .tabs {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 20px;
   display: flex;
-  border-bottom: 2px solid green;
+  border-bottom: 2px solid black;
 }
 
 .tabs > li {
@@ -15,7 +15,7 @@
   background: white;
   color: darkslategray;
   font-weight: bold;
-  border: 2px solid green;
+  border: 2px solid black;
   border-bottom: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;

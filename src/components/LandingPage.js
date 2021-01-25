@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleNotch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import MyCarousel from "./MyCarousel";
+import imageOne from "../images/mohonk1.png";
 
 class LandingPage extends Component {
   state = {};
