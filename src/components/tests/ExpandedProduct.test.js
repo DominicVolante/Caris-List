@@ -1,13 +1,14 @@
 import React from "react";
 import ReactDom from "react-dom";
-import SymptomList from "../SymptomList";
+import ExpandedProduct from "../ExpandedProduct";
 import { BrowserRouter } from "react-router-dom";
 
 it("renders without crashing", () => {
   const div = document.createElement("div");
+  const match = { params: { id: 1 } };
   ReactDom.render(
     <BrowserRouter>
-      <SymptomList />
+      <ExpandedProduct match={match} />
     </BrowserRouter>,
     div
   );

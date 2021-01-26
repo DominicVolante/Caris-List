@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-import EditSymptomForm from "../EditSymptomForm";
+import EditProductForm from "../EditProductForm";
 import { BrowserRouter } from "react-router-dom";
 
 it("renders without crashing", () => {
@@ -8,7 +8,7 @@ it("renders without crashing", () => {
   const match = { params: { id: 1 } };
   ReactDom.render(
     <BrowserRouter>
-      <EditSymptomForm match={match} />
+      <EditProductForm match={match} />
     </BrowserRouter>,
     div
   );
