@@ -8,9 +8,14 @@ class AddProductForm extends Component {
   handleSubmit = (form) => {
     const f = new FormData(form);
     const data = {
-      severity: f.get("severity"),
       name: f.get("name"),
+      rating: f.get("rating"),
+      synopsis: f.get("synopsis"),
       description: f.get("description"),
+      disposal: f.get("disposal"),
+      link: f.get("url"),
+      image: f.get("imgurl"),
+      category: f.get("category"),
     };
     this.addProduct(data);
   };
@@ -43,16 +48,14 @@ class AddProductForm extends Component {
           }}
         >
           <h3>New Product</h3>
-          <label htmlFor="severity">Product Severity</label>
-          <select name="severity" id="severity" required>
+          <label htmlFor="rating">Product rating</label>
+          <select name="rating" id="rating" required>
             <option className="hidden" value="">
-              product
+              Rating
             </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
           </select>
           <br />
           <label htmlFor="name">Enter your product</label>
@@ -60,11 +63,61 @@ class AddProductForm extends Component {
             type="text"
             name="name"
             id="name"
-            placeholder="Fly-biting"
+            placeholder="Title"
             required
           />
+          <label htmlFor="synopsis">Synopsis</label>
+          <textarea
+            name="synopsis"
+            id="synopsis"
+            placeholder="A short description of the product"
+            required
+          ></textarea>
           <label htmlFor="description">Description</label>
-          <textarea name="description" id="description" required></textarea>
+          <textarea
+            name="description"
+            id="description"
+            placeholder="An in-depth description of the product"
+            required
+          ></textarea>
+          <label htmlFor="disposal">Disposal</label>
+          <textarea
+            name="disposal"
+            id="disposal"
+            placeholder="How do you dispose of the product or its packaging?"
+            required
+          ></textarea>
+
+          <label htmlFor="url">Paste the URL of the product's website.</label>
+          <input
+            type="text"
+            name="url"
+            id="url"
+            placeholder="Product Website"
+            required
+          />
+
+          <label htmlFor="imgurl">Paste the URL of the product's image.</label>
+          <input
+            type="text"
+            name="imgurl"
+            id="imgurl"
+            placeholder="Image URL"
+            required
+          />
+
+          <label htmlFor="category">Category</label>
+          <select name="category" id="category" required>
+            <option className="hidden" value="">
+              Category
+            </option>
+            <option value="all">All</option>
+            <option value="kitchen">Kitchen</option>
+            <option value="bath">Bath</option>
+            <option value="services">Services</option>
+          </select>
+          <br />
+
           <button className="start-button" type="submit">
             Submit
           </button>

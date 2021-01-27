@@ -8,7 +8,7 @@ const Header = () => {
         <h1>
           <Link
             to={{
-              pathname: `/home`,
+              pathname: `/`,
             }}
           >
             Cari's List

@@ -40,6 +40,18 @@ class Sidebar extends Component {
             <option value="services">Services</option>
           </select>
         </div>
+        <h3>
+          Have a product that should
+          <br />
+          be on the list?
+        </h3>
+        <Link
+          to={{
+            pathname: `/home/addproduct`,
+          }}
+        >
+          <button className="start-button">Add it!</button>
+        </Link>
       </div>
     );
   }

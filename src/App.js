@@ -6,6 +6,7 @@ import DefaultContext from "./components/context/DefaultContext";
 import EditProductForm from "./components/EditProductForm";
 import LandingPage from "./components/LandingPage";
 import ExpandedProduct from "./components/ExpandedProduct";
+import AddProductRoute from "./components/routes/AddProductRoute";
 
 class App extends Component {
   static contextType = DefaultContext;
@@ -107,6 +108,7 @@ class App extends Component {
               />
             )}
           />
+          <Route path="/home/addproduct" component={AddProductRoute} />
           <Route path="/home/edit/:id" component={EditProductForm} />
           <Route path="/home/details/:id" component={ExpandedProduct} />
         </div>
